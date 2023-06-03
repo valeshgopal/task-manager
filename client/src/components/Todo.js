@@ -27,7 +27,7 @@ const Todo = () => {
       if (user) {
         setLoading(true);
         const getTodos = async () => {
-          const response = await fetch('http://localhost:4000/api/todos', {
+          const response = await fetch('/api/todos', {
             headers: { 'Authorization': `Bearer ${user.token}` },
           });
           const data = await response.json();
@@ -46,7 +46,7 @@ const Todo = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:4000/api/todos', {
+    const response = await fetch('/api/todos', {
       method: 'POST',
       body: JSON.stringify({ todo: text }),
       headers: {
@@ -67,7 +67,7 @@ const Todo = () => {
 
   const handleEdit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:4000/api/todos/' + editId, {
+    const response = await fetch('/api/todos/' + editId, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const Todo = () => {
       });
       return;
     }
-    const response = await fetch('http://localhost:4000/api/todos/' + id, {
+    const response = await fetch('/api/todos/' + id, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${user.token}` },
     });
@@ -111,7 +111,7 @@ const Todo = () => {
     const completedTask = todos.find((todo) => todo._id === id);
     setTaskCompleted(completedTask);
 
-    const response = await fetch('http://localhost:4000/api/todos/' + id, {
+    const response = await fetch('/api/todos/' + id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
