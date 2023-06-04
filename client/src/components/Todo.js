@@ -125,9 +125,15 @@ const Todo = () => {
     const data = await response.json();
     if (response.ok) {
       dispatch({ type: 'UPDATE_TODO', payload: data });
-      toast.success('Task completed successfully!', {
-        position: toast.POSITION.BOTTOM_LEFT,
-      });
+      if (!completedTask.isCompleted) {
+        toast.success('Task completed successfully!', {
+          position: toast.POSITION.BOTTOM_LEFT,
+        });
+      } else {
+        toast.warn('Undo task completion!', {
+          position: toast.POSITION.BOTTOM_LEFT,
+        });
+      }
     }
   };
 
