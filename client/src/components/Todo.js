@@ -14,10 +14,6 @@ const Todo = () => {
   const [editMode, setEditMode] = useState(false);
   const [editId, setEditId] = useState('');
   const [loading, setLoading] = useState(true);
-  const [taskCompleted, setTaskCompleted] = useState({
-    id: '',
-    success: false,
-  });
 
   const { todos, dispatch } = useTodo();
   const { user } = useAuthContext();
@@ -109,7 +105,6 @@ const Todo = () => {
 
   const handleTaskComplete = async (id) => {
     const completedTask = todos.find((todo) => todo._id === id);
-    setTaskCompleted(completedTask);
 
     const response = await fetch('/api/todos/' + id, {
       method: 'PATCH',
