@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const path = require('path')
+const path = require('path');
 
 const todosRoutes = require('./routes/todos');
 const userRoutes = require('./routes/user');
@@ -30,8 +30,8 @@ const connectToDB = () =>
   mongoose
     .connect(MONGO_URI)
     .then(() => {
-      app.listen(4000, () => {
-        console.log('Server started listening on port 4000...');
+      app.listen(5000, () => {
+        console.log('Server started listening on port 5000...');
       });
     })
     .catch((err) => console.log(err));
