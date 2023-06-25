@@ -1,26 +1,20 @@
-
 # Task Manager
 
 A MERN stack application which allows users to perform CRUD operations on custom tasks. Users are authenticated using JWT token mechanism.
-
-
-
 
 ## Demo
 
 https://task-manager-valesh.cyclic.app/
 
-
 ## Tech Stack
 
-**Client:** React
+**Client:** React, MaterialUI
 
 **Global State Management:** Context API and useReducer hook
 
 **Server:** Node, Express
 
 **Database:** MongoDB
-
 
 ## API Reference
 
@@ -30,8 +24,8 @@ https://task-manager-valesh.cyclic.app/
   GET /api/todos
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
 | `jwt_token` | `string` | **Required**. Authorization token |
 
 #### Create todo
@@ -40,8 +34,8 @@ https://task-manager-valesh.cyclic.app/
   POST /api/todos/
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
+| Parameter   | Type     | Description                       |
+| :---------- | :------- | :-------------------------------- |
 | `jwt_token` | `string` | **Required**. Authorization token |
 
 #### Edit todo
@@ -50,8 +44,8 @@ https://task-manager-valesh.cyclic.app/
   PUT /api/todos/${id}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
+| Parameter | Type     | Description                      |
+| :-------- | :------- | :------------------------------- |
 | `id`      | `string` | **Required**. Id of item to edit |
 
 #### Delete todo
@@ -60,10 +54,9 @@ https://task-manager-valesh.cyclic.app/
   DELETE /api/todos/${id}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
+| Parameter | Type     | Description                        |
+| :-------- | :------- | :--------------------------------- |
 | `id`      | `string` | **Required**. Id of item to delete |
-
 
 ## Run Locally
 
@@ -103,7 +96,6 @@ Start the client
 npm run start
 ```
 
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -113,4 +105,3 @@ To run this project, you will need to add the following environment variables to
 `SECRET=bQeThWmZq4t6w9z$C&FlJ@NcRfUjXn2r`
 
 `PORT=5000`
-
